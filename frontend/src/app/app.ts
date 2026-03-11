@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-// On importe les noms exacts des classes que tu as définies
 import { Header } from './components/header/header';
-import { Sidebar } from './components/sidebar/sidebar';
+import { HomeComponent } from './components/home/home'; // Chemin corrigé
 import { Dashboard } from './components/dashboard/dashboard';
 
 @Component({
@@ -11,9 +10,9 @@ import { Dashboard } from './components/dashboard/dashboard';
   standalone: true,
   imports: [
     RouterOutlet, 
-    Header,     // Nom exact de la classe
-    Sidebar,    // Nom exact de la classe
-    Dashboard   // Nom exact de la classe
+    Header,
+    HomeComponent,
+    Dashboard
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'

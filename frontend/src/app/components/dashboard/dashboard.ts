@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, ChartType, ChartData } from 'chart.js';
 import { RegionService } from '../../services/region.service';
+import { Sidebar } from '../sidebar/sidebar'; // <-- AJOUTÉ
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, BaseChartDirective],
+  imports: [CommonModule, BaseChartDirective, Sidebar], // <-- AJOUTÉ
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
@@ -17,7 +18,6 @@ export class Dashboard implements OnInit {
   constructor(private regionService: RegionService) {}
 
   ngOnInit() {
-    // On écoute le service : dès qu'une région est cliquée, on met à jour
     this.regionService.currentRegion.subscribe(name => {
       this.selectedRegion = name;
       this.updateChartsData(); 
@@ -25,8 +25,6 @@ export class Dashboard implements OnInit {
   }
 
   updateChartsData() {
-    // On simule un changement de données pour montrer que ça réagit
-    // On crée une nouvelle référence d'objet pour forcer le rafraîchissement du graphique
     this.barChartData = {
       ...this.barChartData,
       datasets: [{
@@ -36,7 +34,6 @@ export class Dashboard implements OnInit {
     };
   }
 
-  // CONFIGURATIONS DES GRAPHIQUES
   public radarChartType: ChartType = 'radar';
   public chartOptions: ChartConfiguration['options'] = { responsive: true, maintainAspectRatio: false };
   public barChartOptions: ChartConfiguration['options'] = { indexAxis: 'y', responsive: true, maintainAspectRatio: false };
