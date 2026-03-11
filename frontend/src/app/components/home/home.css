@@ -4,7 +4,7 @@
 }
 
 .hero-section {
-    height: 450px;
+    height: 400px;
     background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2000');
     background-size: cover;
     background-position: center;
@@ -20,4 +20,19 @@
 .btn-explore:hover {
     background-color: #1a252f !important;
     transform: scale(1.05);
+}
+
+.preview-card {
+    position: relative;
+    z-index: 5;
+}
+
+/* On s'assure que les icônes et textes sont bien visibles */
+.bi {
+    line-height: 1;
+}
+
+span.fw-bold {
+    font-size: 0.9rem;
+    color: #4a5568;
 }
