@@ -10,7 +10,7 @@ import { RegionService } from '../../services/region.service';
   styleUrl: './sidebar.css'
 })
 export class Sidebar implements OnInit {
-  // Liste de tes régions
+  // Liste complète incluant les 13 régions métropolitaines + les 5 DROM
   regions = [
     { name: 'Auvergne-Rhône-Alpes' },
     { name: 'Bourgogne-Franche-Comté' },
@@ -24,23 +24,25 @@ export class Sidebar implements OnInit {
     { name: 'Nouvelle-Aquitaine' },
     { name: 'Occitanie' },
     { name: 'Pays de la Loire' },
-    { name: 'Provence-Alpes-Côte d\'Azur' }
+    { name: 'Provence-Alpes-Côte d\'Azur' },
+    // Ajout des régions d'outre-mer
+    { name: 'Guadeloupe' },
+    { name: 'Guyane' },
+    { name: 'La Réunion' },
+    { name: 'Martinique' },
+    { name: 'Mayotte' }
   ];
 
-  // Variable pour savoir quelle région est actuellement sélectionnée
   selectedRegion: string = 'France Entière';
 
   constructor(private regionService: RegionService) {}
 
   ngOnInit() {
-    // On s'abonne au service pour suivre la région active
-    // Cela permet de garder le bouton "allumé" en bleu même si le changement vient d'ailleurs
     this.regionService.currentRegion.subscribe(name => {
       this.selectedRegion = name;
     });
   }
 
-  // Fonction appelée par le (click) dans le HTML
   onSelectRegion(name: string) {
     this.regionService.changeRegion(name);
   }

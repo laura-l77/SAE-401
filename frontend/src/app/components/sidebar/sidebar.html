@@ -4,13 +4,13 @@
     Régions :
   </h2>
   
-  <ul class="nav nav-pills flex-column mb-auto overflow-auto">
+  <ul class="nav nav-pills flex-column flex-nowrap mb-auto overflow-y-auto custom-scroll" style="max-height: calc(100vh - 100px); display: block !important;">
     @for (region of regions; track region.name) {
-      <li class="nav-item">
+      <li class="nav-item w-100 mb-1">
         <button 
           (click)="onSelectRegion(region.name)"
           [class.active]="region.name === selectedRegion"
-          class="nav-link w-100 text-start mb-1 rounded-pill border-0 transition-all"
+          class="nav-link w-100 text-start rounded-pill border-0 transition-all px-3"
           [ngClass]="{
             'bg-primary text-white shadow-sm fw-bold': region.name === selectedRegion, 
             'text-dark hover-bg-light': region.name !== selectedRegion
