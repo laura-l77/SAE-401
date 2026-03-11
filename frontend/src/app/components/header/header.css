@@ -5,7 +5,9 @@
 .navbar-brand:hover {
     opacity: 0.8;
 }
-
+.custom-nav {
+    background-color: #160a6e !important;
+}
 .text-light-50 {
     color: rgba(255, 255, 255, 0.6);
 }
