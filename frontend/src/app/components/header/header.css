@@ -1,0 +1,11 @@
+.navbar-brand {
+    transition: opacity 0.2s ease;
+}
+
+.navbar-brand:hover {
+    opacity: 0.8;
+}
+
+.text-light-50 {
+    color: rgba(255, 255, 255, 0.6);
+}
