@@ -1,45 +1,12 @@
-<div class="container-fluid py-4">
-  <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1 class="h2 border-bottom pb-2">Graphiques :</h1>
-  </div>
-
-  <div class="row g-4">
-    
-    <div class="col-md-6">
-      <div class="card h-100 shadow-sm border-0 rounded-4 p-3 bg-light">
-        <h5 class="card-title text-center mb-4">1 : Situation Sociale et Niveau des Loyers</h5>
-        <div class="chart-placeholder d-flex align-items-center justify-content-center border rounded-3 bg-white" style="height: 300px;">
-          <p class="text-muted italic">Espace pour le graphique mixte</p>
-        </div>
-      </div>
+<div class="col-md-6">
+  <div class="card h-100 shadow-sm border-0 rounded-4 p-3 bg-light">
+    <h5 class="card-title text-center mb-4">4 : Capacité d’Absorption du Logement Social</h5>
+    <div class="bg-white p-2 rounded-3" style="height: 300px;">
+      <canvas baseChart
+        [data]="radarChartData"
+        [options]="radarChartOptions"
+        [type]="radarChartType">
+      </canvas>
     </div>
-
-    <div class="col-md-6">
-      <div class="card h-100 shadow-sm border-0 rounded-4 p-3 bg-light">
-        <h5 class="card-title text-center mb-4">2 : Jeunesse et Accès à l'Emploi et au Logement</h5>
-        <div class="chart-placeholder d-flex align-items-center justify-content-center border rounded-3 bg-white" style="height: 300px;">
-          <p class="text-muted italic">Espace pour le graphique à barres horizontales</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="card h-100 shadow-sm border-0 rounded-4 p-3 bg-light">
-        <h5 class="card-title text-center mb-4">3 : État du Parc de Logements</h5>
-        <div class="chart-placeholder d-flex align-items-center justify-content-center border rounded-3 bg-white" style="height: 300px;">
-          <p class="text-muted italic">Espace pour le graphique à lignes</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="card h-100 shadow-sm border-0 rounded-4 p-3 bg-light">
-        <h5 class="card-title text-center mb-4">4 : Capacité d’Absorption du Logement Social</h5>
-        <div class="chart-placeholder d-flex align-items-center justify-content-center border rounded-3 bg-white" style="height: 300px;">
-          <p class="text-muted italic">Espace pour le graphique radar</p>
-        </div>
-      </div>
-    </div>
-
   </div>
 </div>
