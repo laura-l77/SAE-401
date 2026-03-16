@@ -1,0 +1,25 @@
+<div class="d-flex flex-column p-3 bg-light border-end shadow-sm" style="height: 100vh; width: 280px; position: sticky; top: 0;">
+  
+  <h2 class="h4 fw-bold mb-4 border-bottom pb-2 text-decoration-underline text-secondary">
+    Régions :
+  </h2>
+  
+  <ul class="nav nav-pills flex-column flex-nowrap mb-auto overflow-y-auto custom-scroll" style="max-height: calc(100vh - 100px); display: block !important;">
+    @for (region of regions; track region.name) {
+      <li class="nav-item w-100 mb-1">
+        <button 
+          (click)="onSelectRegion(region.name)"
+          [class.active]="region.name === selectedRegion"
+          class="nav-link w-100 text-start rounded-pill border-0 transition-all px-3"
+          [ngClass]="{
+            'bg-primary text-white shadow-sm fw-bold': region.name === selectedRegion, 
+            'text-dark hover-bg-light': region.name !== selectedRegion
+          }">
+          <i class="bi bi-geo-alt-fill me-2" *ngIf="region.name === selectedRegion"></i>
+          {{ region.name }}
+        </button>
+      </li>
+    }
+  </ul>
+
+</div>

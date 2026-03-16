@@ -1,0 +1,61 @@
+<div class="d-flex w-100">
+  <aside style="width: 280px; min-width: 280px; flex-shrink: 0; height: 100vh;">
+    <app-sidebar></app-sidebar>
+  </aside>
+
+  <main class="flex-grow-1 bg-white" style="min-width: 0;">
+    <div class="container-fluid p-4">
+      
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="d-flex align-items-center justify-content-between border-bottom pb-3">
+            <div>
+              <h1 class="h3 fw-bold text-dark mb-1">Tableau de bord analytique</h1>
+              <p class="text-muted mb-0">Données visualisées pour la région : <span class="badge bg-primary fs-6">{{ selectedRegion }}</span></p>
+            </div>
+            <div class="text-muted small">Dernière mise à jour : 11 Mars 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card shadow-sm border-0 rounded-4 p-3 bg-light h-100">
+            <h6 class="fw-bold text-secondary mb-3"><i class="bi bi-balance me-2"></i>1 : L'Équité Sociale</h6>
+            <div class="bg-white p-2 rounded-3" style="height: 350px;">
+              <canvas baseChart [data]="equiteSocialData" [options]="chartOptions" type="bar"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card shadow-sm border-0 rounded-4 p-3 bg-light h-100">
+            <h6 class="fw-bold text-secondary mb-3"><i class="bi bi-shield-check me-2"></i>2 : Le Bouclier de la Jeunesse</h6>
+            <div class="bg-white p-2 rounded-3" style="height: 350px;">
+              <canvas baseChart [data]="bouclierJeunesseData" [options]="barChartOptions" type="bar"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card shadow-sm border-0 rounded-4 p-3 bg-light h-100">
+            <h6 class="fw-bold text-secondary mb-3"><i class="bi bi-exclamation-triangle me-2"></i>3 : La Double Peine</h6>
+            <div class="bg-white p-2 rounded-3" style="height: 350px;">
+              <canvas baseChart [data]="doublePeineData" [options]="chartOptions" type="line"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card shadow-sm border-0 rounded-4 p-3 bg-light h-100">
+            <h6 class="fw-bold text-secondary mb-3"><i class="bi bi-speedometer2 me-2"></i>4 : La Tension du Marché</h6>
+            <div class="bg-white p-2 rounded-3" style="height: 350px;">
+              <canvas baseChart [data]="tensionMarcheData" [options]="radarChartOptions" type="radar"></canvas>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</div>

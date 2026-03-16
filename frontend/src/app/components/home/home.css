@@ -1,0 +1,42 @@
+.chart-preview-card {
+    transform: translateY(-80px); /* Remonte la carte sur le bandeau du haut */
+    z-index: 10;
+}
+
+.hero-section {
+    height: 400px;
+    
+    background-image: url('/image/hlm2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #28406A; /* Couleur de secours pendant le chargement */
+    border-bottom: 8px solid #28406A;
+    position: relative;
+}
+
+.btn-explore {
+    background-color: #28406A !important;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-explore:hover {
+    background-color: #1a252f !important;
+    transform: scale(1.05);
+}
+
+.preview-card {
+    position: relative;
+    z-index: 5;
+}
+
+/* les icônes et textes sont bien visibles */
+.bi {
+    line-height: 1;
+}
+
+span.fw-bold {
+    font-size: 0.9rem;
+    color: #4a5568;
+}
